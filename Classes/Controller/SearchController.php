@@ -35,6 +35,7 @@ use Subugoe\Find\Utility\LoggerUtility;
 use TYPO3\CMS\Core\Utility\ArrayUtility as CoreArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class SearchController extends ActionController
 {
@@ -81,6 +82,8 @@ class SearchController extends ActionController
      */
     public function indexAction()
     {
+        DebuggerUtility::var_dump($this->settings);
+
         if (array_key_exists('id', $this->requestArguments)) {
             $this->forward('detail');
         } else {
