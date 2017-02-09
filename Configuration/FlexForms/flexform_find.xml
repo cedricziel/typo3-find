@@ -222,25 +222,34 @@
                             </radio>
                         </el>
                     </settings.override.queryFields>
+
                     <settings.override.facets type="array">
                         <title>Facetten</title>
                         <section>1</section>
                         <type>array</type>
                         <el>
-                            <test>
+                            <text>
                                 <type>array</type>
-                                <title>Test Facette</title>
+                                <title>Text</title>
                                 <el>
-                                    <dingsi>
+                                    <id>
                                         <TCEforms>
-                                            <label>Test Objekt</label>
+                                            <label>ID</label>
                                             <config>
                                                 <type>input</type>
                                             </config>
                                         </TCEforms>
-                                    </dingsi>
+                                    </id>
+                                    <field>
+                                        <TCEforms>
+                                            <label>Field</label>
+                                            <config>
+                                                <type>input</type>
+                                            </config>
+                                        </TCEforms>
+                                    </field>
                                 </el>
-                            </test>
+                            </text>
                         </el>
                     </settings.override.facets>
                 </el>

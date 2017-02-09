@@ -82,8 +82,6 @@ class SearchController extends ActionController
      */
     public function indexAction()
     {
-        DebuggerUtility::var_dump($this->settings);
-
         if (array_key_exists('id', $this->requestArguments)) {
             $this->forward('detail');
         } else {

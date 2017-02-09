@@ -45,7 +45,7 @@ class RealUrl
         return array_merge_recursive($params['config'], [
                 'postVarSets' => [
                     '_DEFAULT' => [
-                        'id' => [
+                        'find_id' => [
                             [
                                 'GETvar' => 'tx_find_find[id]',
                             ],

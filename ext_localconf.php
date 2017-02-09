@@ -31,6 +31,9 @@ if (TYPO3_MODE === 'BE') {
     );
 }
 
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['find_find'] =
+            \Subugoe\Find\Hooks\FindPluginPreviewRenderer::class;
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:find/Configuration/TSconfig/ContentElementWizard.tsconfig">');
 
 // RealURL autoconfiguration
