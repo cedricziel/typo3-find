@@ -74,7 +74,9 @@ class SolrServiceProvider extends AbstractServiceProvider implements ServiceProv
                     'port' => intval($currentConnectionSettings['port']),
                     'path' => $currentConnectionSettings['path'],
                     'timeout' => $currentConnectionSettings['timeout'],
-                    'scheme' => $currentConnectionSettings['scheme']
+                    'scheme' => $currentConnectionSettings['scheme'],
+                    'username' => $currentConnectionSettings['username'],
+                    'password' => $currentConnectionSettings['password']
                 ]
             ]
         ];

@@ -28,14 +28,15 @@ namespace Subugoe\Find\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
+use Subugoe\Find\Configuration\FlexFormSettingsMerger;
 use Subugoe\Find\Service\ServiceProviderInterface;
 use Subugoe\Find\Utility\ArrayUtility;
 use Subugoe\Find\Utility\FrontendUtility;
 use Subugoe\Find\Utility\LoggerUtility;
+use Subugoe\Find\Utility\SettingsUtility;
 use TYPO3\CMS\Core\Utility\ArrayUtility as CoreArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class SearchController extends ActionController
 {
@@ -63,6 +64,8 @@ class SearchController extends ActionController
         $this->searchProvider->setRequestArguments($this->requestArguments);
         $this->searchProvider->setAction($this->request->getControllerActionName());
         $this->searchProvider->setControllerExtensionKey($this->request->getControllerExtensionKey());
+
+        $this->settings = SettingsUtility::overrideFlexFormSettings($this->settings);
     }
 
     /**

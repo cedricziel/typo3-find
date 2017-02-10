@@ -39,21 +39,11 @@
                             <label>Default Query</label>
                             <config>
                                 <type>input</type>
-                                <renderType>selectSingle</renderType>
-                                <items>
-                                    <numIndex index="1">
-                                        <numIndex index="0">Index &amp; Detail</numIndex>
-                                        <numIndex index="1">Search->index;Search->detail</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2">
-                                        <numIndex index="0">Index</numIndex>
-                                        <numIndex index="1">Search->index</numIndex>
-                                    </numIndex>
-                                </items>
+                                <eval>trim</eval>
+                                <default>*:*</default>
                             </config>
                         </TCEforms>
                     </settings.override.defaultQuery>
-
 
                     <settings.override.queryFields type="array">
                         <title>Query Fields</title>
@@ -80,6 +70,14 @@
                                             </config>
                                         </TCEforms>
                                     </query>
+                                    <extended>
+                                        <TCEforms>
+                                            <label>Only show in extended search?</label>
+                                            <config>
+                                                <type>check</type>
+                                            </config>
+                                        </TCEforms>
+                                    </extended>
                                 </el>
                             </range>
                             <hidden>
@@ -132,6 +130,14 @@
                                             </config>
                                         </TCEforms>
                                     </default>
+                                    <extended>
+                                        <TCEforms>
+                                            <label>Only show in extended search?</label>
+                                            <config>
+                                                <type>check</type>
+                                            </config>
+                                        </TCEforms>
+                                    </extended>
                                 </el>
                             </select>
                             <selectFacet>
@@ -167,9 +173,19 @@
                                             <label>Query</label>
                                             <config>
                                                 <type>input</type>
+                                                <eval>trim</eval>
+                                                <default>*:*</default>
                                             </config>
                                         </TCEforms>
                                     </query>
+                                    <extended>
+                                        <TCEforms>
+                                            <label>Only show in extended search?</label>
+                                            <config>
+                                                <type>check</type>
+                                            </config>
+                                        </TCEforms>
+                                    </extended>
                                 </el>
                             </selectFacet>
                             <radio>
@@ -184,24 +200,6 @@
                                             </config>
                                         </TCEforms>
                                     </id>
-                                    <extended>
-                                        <TCEforms>
-                                            <label>Extended</label>
-                                            <config>
-                                                <type>radio</type>
-                                                <items type="array">
-                                                    <numIndex index="0">
-                                                        <numIndex index="0">Yes</numIndex>
-                                                        <numIndex index="1">1</numIndex>
-                                                    </numIndex>
-                                                    <numIndex index="1">
-                                                        <numIndex index="0">No</numIndex>
-                                                        <numIndex index="1">0</numIndex>
-                                                    </numIndex>
-                                                </items>
-                                            </config>
-                                        </TCEforms>
-                                    </extended>
                                     <options>
                                         <TCEforms>
                                             <label>Options</label>
@@ -218,6 +216,14 @@
                                             </config>
                                         </TCEforms>
                                     </query>
+                                    <extended>
+                                        <TCEforms>
+                                            <label>Only show in extended search?</label>
+                                            <config>
+                                                <type>check</type>
+                                            </config>
+                                        </TCEforms>
+                                    </extended>
                                 </el>
                             </radio>
                         </el>
