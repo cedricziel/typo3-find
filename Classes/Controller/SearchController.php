@@ -28,7 +28,6 @@ namespace Subugoe\Find\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
-use Subugoe\Find\Configuration\FlexFormSettingsMerger;
 use Subugoe\Find\Service\ServiceProviderInterface;
 use Subugoe\Find\Utility\ArrayUtility;
 use Subugoe\Find\Utility\FrontendUtility;
@@ -57,6 +56,7 @@ class SearchController extends ActionController
     {
         ksort($this->settings['queryFields']);
 
+        $this->settings = SettingsUtility::overrideFlexFormSettings($this->settings);
         $this->initializeConnection($this->settings['activeConnection']);
 
         $this->requestArguments = $this->request->getArguments();
@@ -64,8 +64,6 @@ class SearchController extends ActionController
         $this->searchProvider->setRequestArguments($this->requestArguments);
         $this->searchProvider->setAction($this->request->getControllerActionName());
         $this->searchProvider->setControllerExtensionKey($this->request->getControllerExtensionKey());
-
-        $this->settings = SettingsUtility::overrideFlexFormSettings($this->settings);
     }
 
     /**

@@ -234,9 +234,9 @@
                         <section>1</section>
                         <type>array</type>
                         <el>
-                            <text>
+                            <list>
                                 <type>array</type>
-                                <title>Text</title>
+                                <title>List</title>
                                 <el>
                                     <id>
                                         <TCEforms>
@@ -255,7 +255,7 @@
                                         </TCEforms>
                                     </field>
                                 </el>
-                            </text>
+                            </list>
                         </el>
                     </settings.override.facets>
                 </el>
