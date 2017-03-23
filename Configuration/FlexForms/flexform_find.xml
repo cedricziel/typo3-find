@@ -278,29 +278,23 @@
                                     </field>
                                     <categories>
                                         <TCEforms>
-                                            <label>Categories</label>
+                                            <label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.categories</label>
                                             <config>
                                                 <type>select</type>
-                                                <renderType>selectTree</renderType>
-                                                <treeConfig>
-                                                    <parentField>parent</parentField>
-                                                    <appearance>
-                                                        <width>650</width>
-                                                        <height>400</height>
-                                                    </appearance>
-                                                </treeConfig>
-                                                <items type="array">
+                                                <renderType>selectMultipleSideBySide</renderType>
+                                                <foreign_table>sys_category</foreign_table>
+                                                <foreign_table_where>AND (sys_category.sys_language_uid = 0 OR sys_category.l10n_parent = 0) ORDER BY sys_category.sorting</foreign_table_where>
+                                                <size>15</size>
+                                                <items>
                                                     <numIndex index="0" type="array">
                                                         <numIndex index="0"></numIndex>
                                                         <numIndex index="1"></numIndex>
                                                     </numIndex>
                                                 </items>
-                                                <foreign_table>sys_category</foreign_table>
-                                                <foreign_table_where>
-                                                    AND sys_category.deleted = 0
-                                                </foreign_table_where>
-                                                <size>10</size>
-                                                <multiple>true</multiple>
+                                                <minitems>0</minitems>
+                                                <maxitems>99</maxitems>
+                                                <enableMultiSelectFilterTextfield>1</enableMultiSelectFilterTextfield>
+                                                <multiple>1</multiple>
                                             </config>
                                         </TCEforms>
                                     </categories>
