@@ -91,7 +91,9 @@ class SettingsUtility
 
                 if (ucfirst($type) === 'CategoryList') {
                     $categories = explode(',', $definition['categories']);
-                    $settings['additionalFilters'][] = strtolower($definition['field']).':('.implode(' OR ', $categories).')';
+                    if (count($categories) > 0) {
+                        $settings['additionalFilters'][] = strtolower($definition['field']).':('.implode(' OR ', $categories).')';
+                    }
                 }
 
                 return [
