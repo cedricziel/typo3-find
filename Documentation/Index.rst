@@ -360,6 +360,24 @@ Examples::
 		}
 	}
 
+CategoryList
+....
+
+Like the ``List`` facet, this facet allows to list sys_category records. Additionally to listing them, the value is computed and an ``additionalFilter`` filter for the selected categories is attached to the settings and thus filters the query. For more info refer to the ``List`` facet.
+
+* ``categories``: a list of category uids
+
+Examples::
+
+	plugin.tx_find.settings.facets {
+		10 {
+			id = category
+			field = category_uids
+			type = CategoryList
+			categories = 82,3
+		}
+	}
+
 
 Tabs
 ....

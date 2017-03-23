@@ -256,6 +256,56 @@
                                     </field>
                                 </el>
                             </list>
+                            <categoryList>
+                                <type>array</type>
+                                <title>System Categories</title>
+                                <el>
+                                    <id>
+                                        <TCEforms>
+                                            <label>ID</label>
+                                            <config>
+                                                <type>input</type>
+                                            </config>
+                                        </TCEforms>
+                                    </id>
+                                    <field>
+                                        <TCEforms>
+                                            <label>Field</label>
+                                            <config>
+                                                <type>input</type>
+                                            </config>
+                                        </TCEforms>
+                                    </field>
+                                    <categories>
+                                        <TCEforms>
+                                            <label>Categories</label>
+                                            <config>
+                                                <type>select</type>
+                                                <renderType>selectTree</renderType>
+                                                <treeConfig>
+                                                    <parentField>parent</parentField>
+                                                    <appearance>
+                                                        <width>650</width>
+                                                        <height>400</height>
+                                                    </appearance>
+                                                </treeConfig>
+                                                <items type="array">
+                                                    <numIndex index="0" type="array">
+                                                        <numIndex index="0"></numIndex>
+                                                        <numIndex index="1"></numIndex>
+                                                    </numIndex>
+                                                </items>
+                                                <foreign_table>sys_category</foreign_table>
+                                                <foreign_table_where>
+                                                    AND sys_category.deleted = 0
+                                                </foreign_table_where>
+                                                <size>10</size>
+                                                <multiple>true</multiple>
+                                            </config>
+                                        </TCEforms>
+                                    </categories>
+                                </el>
+                            </categoryList>
                         </el>
                     </settings.override.facets>
                 </el>

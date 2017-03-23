@@ -84,10 +84,15 @@ class SettingsUtility
         );
 
         $overriddenFacets = array_map(
-            function ($facet) {
+            function ($facet) use (&$settings) {
                 reset($facet);
                 $type = key($facet);
                 $definition = current($facet);
+
+                if (ucfirst($type) === 'CategoryList') {
+                    $categories = explode(',', $definition['categories']);
+                    $settings['additionalFilters'][] = strtolower($definition['field']).':('.implode(' OR ', $categories).')';
+                }
 
                 return [
                     'id'    => strtolower($definition['id']),
